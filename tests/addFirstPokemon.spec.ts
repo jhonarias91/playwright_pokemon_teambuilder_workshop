@@ -1,13 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('addFirstPokemon', async ({ page }) => {
-  await page.goto('https://play.pokemonshowdown.com/');
-  await page.getByRole('button', { name: 'Teambuilder' }).click();
-  await page.locator('.selectFolder > .fa').first().click();
-  await page.getByPlaceholder('Search formats').fill('Ubers');
-  await page.getByPlaceholder('Search formats').press('Enter');
-  await page.getByRole('button', { name: 'Ubers ', exact: true }).click();
-  await page.getByRole('button', { name: ' New Box' }).click();
+ 
   await page.getByRole('button', { name: ' Add Pokémon' }).click();
   await page.getByRole('textbox').fill('ARCEUS');
   await page.getByRole('textbox').press('Enter');
@@ -45,3 +39,4 @@ test('addFirstPokemon', async ({ page }) => {
   await expect(page.locator('#room-teambuilder')).toContainText('0');
   await page.getByRole('button', { name: ' Team' }).click();
 });
+
