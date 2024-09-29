@@ -1,5 +1,6 @@
 {
     "format": "Ubers",
+    "gen": "[Gen 7]",
     "team": [{
             "name": "Mewtwo",
             "item": "Eviolite",

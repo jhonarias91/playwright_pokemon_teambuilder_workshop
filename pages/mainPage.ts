@@ -6,7 +6,6 @@ export class MainPage{
 
     constructor(public page: Page){
         this.teamBuilderBtn = this.page.getByRole('button', { name: 'Teambuilder' });
-
     }
 
     async goToTeamBuilder(){

@@ -15,7 +15,7 @@ export class StatPage{
 
    async typeEvs(newEvs: { [key: string]: number }){
     for (let stat in newEvs) {          
-           await this.evs[stat].pressSequentially(newEvs[stat] + "", {delay: 10});
+          await this.evs[stat].pressSequentially(newEvs[stat] + "", {delay: 1});
        }
    }
 
