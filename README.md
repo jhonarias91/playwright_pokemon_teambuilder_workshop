@@ -14,3 +14,6 @@ npx playwright codegen https://play.pokemonshowdown.com
 
 - run test 
 npx playwright test addFirstPokemon --headed
+
+- enabled trace
+npx playwright test --trace on
