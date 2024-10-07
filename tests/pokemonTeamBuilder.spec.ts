@@ -46,13 +46,15 @@ test('test pokemon team succesfully', async ({ page }) => {
         const remainingEvs = await stats.getRemainingEvs();
 
         expect(remainingEvs).toBe('0');
+        page.screenshot({ path: `${currentPokemon.name}.png` });
         
         await pokemonSearch.goToteam();
     }
+    page.screenshot({ path: "allTeam.png" });
 
     await teamBuilderPage.validateTeam();
-
-    await expect(teamBuilderPage.getPopUpText()).resolves.toBe(`Your team is valid for ${pokemonData.gen} ${pokemonData.format}.`);
+    await expect(teamBuilderPage.getPopUpText()).resolves.toBe(`${pokemonData.teamValidationMsg} ${pokemonData.gen} ${pokemonData.format}.`);
+    
     //Close the page manually
     await page.close();
 });
